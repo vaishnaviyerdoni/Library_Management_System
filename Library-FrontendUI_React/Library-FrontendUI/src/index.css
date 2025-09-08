@@ -74,40 +74,43 @@ button:focus-visible {
 .welcome-header {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* username left, logout right */
   border-bottom: 2px solid #646cff;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
-  position: relative;
   color: #ffffff;
   font-size: 1.3rem;
   font-weight: 500;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
 }
 
 /* User name on the left */
 .welcome-header .user-name {
   font-size: 1.3rem;
   font-weight: 500;
+  flex: 1; /* allows some space */
 }
 
-/* Centered text */
+/* Centered text using flex trick */
 .welcome-header .center-text {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   font-weight: bold;
   font-size: 1.2rem;
+  text-align: center;
+  flex: 1;
 }
 
-/* Logout button at top-right */
+/* Logout button on right */
 .logout-btn {
-  margin-left: auto;
+  font-weight: 500;
   background-color: #1a1a1a;
   color: white;
   border: 1px solid #646cff;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: 500;
+  flex: 0; /* do not grow */
 }
 .logout-btn:hover {
   background-color: #646cff;
@@ -123,4 +126,75 @@ button:focus-visible {
 
 .books-table, .users-table {
   flex: 1;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr; 
+  gap: 2rem; 
+  align-items: start;
+}
+
+.add-book-form,
+.books-table-section,
+.users-table-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; }
+
+.add-book-form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Center the entire admin content horizontally */
+.admin-content {
+  display: flex;
+  flex-direction: column; /* stack header and main grid */
+  align-items: center;    /* center horizontally */
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* 3-part grid layout for Add Book | Books Table | Users Table */
+.admin-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr; /* adjust width ratio */
+  gap: 2rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Each section inside grid */
+.add-book-form,
+.books-table-section,
+.users-table-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center form/table container */
+  gap: 1rem;
+}
+
+/* Form inputs full width */
+.add-book-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 250px;
+}
+
+.add-book-form form input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Place the submit button at bottom of form */
+.add-book-form form button {
+  margin-top: 0.5rem;
+  width: 100%;
 }
