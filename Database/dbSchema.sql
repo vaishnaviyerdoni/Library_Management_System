@@ -1,0 +1,27 @@
+CREATE DATABASE libraryDB;
+USE libraryDB;
+
+CREATE TABLE books(
+	bookId INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    ISBN VARCHAR(13),
+    isAvailable BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE users(
+	userId INT PRIMARY KEY AUTO_INCREMENT,
+    bookId INT UNIQUE,
+    userName VARCHAR(100)  UNIQUE NOT NULL,
+    pass_word VARCHAR(100) NOT NULL,
+    userRole ENUM ("member", "admin") NOT NULL,
+    CONSTRAINT fk_book FOREIGN KEY (bookId) REFERENCES books(bookId) ON DELETE SET NULL
+);
+
+CREATE TABLE userbooks(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    userId int ,
+    bookId int ,
+    CONSTRAINT FK_user FOREIGN KEY (userId) REFERENCES users(userId) ON DELETE CASCADE,
+    CONSTRAINT FK_borrowedBook FOREIGN KEY (bookId) REFERENCES books(bookId) ON DELETE CASCADE
+);
