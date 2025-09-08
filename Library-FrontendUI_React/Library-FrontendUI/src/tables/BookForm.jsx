@@ -19,7 +19,7 @@ function BookForm({ onAdd }) {
       <input placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
       <input placeholder="Author" value={author} onChange={(e) => setAuthor(e.target.value)} />
       <input placeholder="ISBN" value={ISBN} onChange={(e) => setISBN(e.target.value)} />
-      <button type="submit">Add</button>
+      <button type="submit">Add Book</button>
     </form>
   );
 }
