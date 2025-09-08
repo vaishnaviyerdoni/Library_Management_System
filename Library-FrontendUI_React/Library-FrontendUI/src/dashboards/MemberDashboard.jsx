@@ -44,8 +44,7 @@ function MemberDashboard() {
   return (
     <div>
       <div className="welcome-header">
-        <span className="user-name">Hello {localStorage.getItem("userName")}</span>
-        <span className="welcome-text">, Welcome to Library</span>
+        <span className="user-name">Hello {localStorage.getItem("userName")}, Welcome to Library!</span>
     </div>
 
       <h2>Member Dashboard</h2>

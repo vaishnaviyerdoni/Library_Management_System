@@ -39,20 +39,21 @@ function AdminDashboard() {
   };
 
   return (
-   <div>
-      <div className="welcome-header">
-        <span className="user-name">Hello {localStorage.getItem("userName")}</span>
-        <span className="welcome-text">, Welcome to Library</span>
-        <button className="logout-btn" onClick={handleLogout}>Logout</button>
+   <div className="admin-content">
+    <div className="welcome-header">
+      <span className="user-name">Hello {localStorage.getItem("userName")}, Welcome to Library</span>
+      <button className="logout-btn" onClick={handleLogout}>Logout</button>
     </div>
+
 
   <div className="tables-container">
+    <div className="add-book-form">
+      <BookForm onAdd={handleAddBook} />
+    </div>
     <div className="books-table">
       <h2>Books</h2>
-      <BookForm onAdd={handleAddBook} />
       <BookTable books={books} onDelete={handleDeleteBook} />
     </div>
-
     <div className="users-table">
       <h2>Users</h2>
       <UserTable users={users} onDelete={handleDeleteUser} />
