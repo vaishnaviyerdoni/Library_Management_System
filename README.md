@@ -11,4 +11,6 @@ A full-stack Library Management System built with **Java Spring Boot** for the b
 ## Features
 - Manage users and books  
 - Borrow and return books  
-- Track book availability  
+- Track book availability
+- Role based Authentication(Admin & Member)
+- User Registration and Login  
