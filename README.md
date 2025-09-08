@@ -3,7 +3,8 @@
 A full-stack Library Management System built with **Java Spring Boot** for the backend and **React** for the frontend.
 
 ## Technologies Used
-- **Backend:** Java, Spring Boot, Maven  
+- **Backend:** Java, Spring Boot
+- **Build Tool:** Maven
 - **Database:** MySQL  
 - **Frontend:** React  
 - **API Testing:** Postman  
